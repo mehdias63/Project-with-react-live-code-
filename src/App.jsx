@@ -1,9 +1,13 @@
-import ProjectList from './components/ProjectList'
+import { useState } from 'react'
+import ProjectTable from './components/ProjectTable'
+import ProjectHeader from './components/ProjectHeader'
 
 function App() {
+	const [filter, setFilter] = useState('ALL')
 	return (
 		<div className="container mx-auto p-4">
-			<ProjectList />
+			<ProjectHeader filter={filter} setFilter={setFilter} />
+			<ProjectTable filter={filter} />
 		</div>
 	)
 }
